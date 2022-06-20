@@ -1,12 +1,11 @@
 import React, { Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-// import Home from './views/tabs/Home';
 
 import routes from '../routes.js';
 
 const Content = () => {
   return (
-    <div>
+    <div style={{marginTop: "70px"} }>
       <Suspense>
         <Routes>
           {console.log(routes)};

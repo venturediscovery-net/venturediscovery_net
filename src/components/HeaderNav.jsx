@@ -17,7 +17,10 @@ import Logo_txt from '../assets/brand/Logo_txt.svg';
 import { ThemeProvider } from '@mui/private-theming';
 import theme from '../theme.js';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+import Stack from '@mui/material/Stack';
+
+
+const tabs = ['Home', 'Survey', 'Community', 'FAQ'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const HeaderNav = () => {
@@ -41,28 +44,13 @@ const HeaderNav = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <AppBar sx = {{backgroundColor: "white",}}  position="static">
+      <AppBar sx = {{backgroundColor: "white",}}  position="fixed">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
 
-        {/* LOGO */}
-
-            <CardMedia
-              component="img"
-              sx={{ width: 50 }}
-              image={Logo}
-              alt="Logo"
-            />
-            <CardMedia
-              component="img"
-              sx={{ ml: 1, width: 120 }}
-              image={Logo_txt}
-              alt="Logo"
-            />
-
 
           {/* HAMBURGER */}
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <Box sx={{ justifyContent: 'start', display: { xs: 'flex', md: 'none' } }}>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -91,23 +79,57 @@ const HeaderNav = () => {
                   display: { xs: 'block', md: 'none' },
                 }}
               >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                {tabs.map((tab) => (
+                  <MenuItem key={tab} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{tab}</Typography>
                   </MenuItem>
                 ))}
               </Menu>
             </Box>
 
+
+        {/* LOGO */}
+          <Toolbar sx={{ flexGrow: 1,  mr:5,  justifyContent: "center",  display: { xs: 'flex', md: 'none' } }}>
+
+            <CardMedia
+              component="img"
+              sx={{ width: 50 }}
+              image={Logo}
+              alt="Logo"
+            />
+            <CardMedia
+              component="img"
+              sx={{ ml: 1, width: 120 }}
+              image={Logo_txt}
+              alt="Logo"
+            />
+          </Toolbar >
+
+        <Toolbar sx={{ mr:5, display: { xs: 'none', md: 'flex' } }}>
+
+            <CardMedia
+              component="img"
+              sx={{ width: 50 }}
+              image={Logo}
+              alt="Logo"
+            />
+            <CardMedia
+              component="img"
+              sx={{ ml: 1, width: 120 }}
+              image={Logo_txt}
+              alt="Logo"
+            />
+          </Toolbar >
+
           {/* TAB LINKS */}
             <Box sx={{ mr:5, justifyContent: "flex-end", flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              {pages.map((page) => (
+              {tabs.map((tab) => (
                 <Button
-                  key={page}
+                  key={tab}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: 'black', display: 'block' }}
                 >
-                  {page}
+                  {tab}
                 </Button>
               ))}
             </Box>
@@ -143,6 +165,12 @@ const HeaderNav = () => {
               </Menu>
             </Box>
 
+            <Stack sx = {{display: { xs: 'none' } }} spacing={2} direction="row">
+              {/* <Button variant="text">Text</Button> */}
+              <Button variant="contained">Sign Up</Button>
+              {/* <Button variant="outlined">Outlined</Button> */}
+            </Stack>
+  
           </Toolbar>
         </Container>
       </AppBar>

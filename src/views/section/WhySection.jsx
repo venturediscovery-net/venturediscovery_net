@@ -1,10 +1,11 @@
 import React from 'react'
+import { Paper } from '@mui/material';
 
 const WhySection = () => {
   return (
-    <div>
+  <Paper elevation={0}>
         WhySection
-    </div>
+  </Paper>
   )
 }
 
