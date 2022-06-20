@@ -20,7 +20,6 @@ import ScrollToColor from '../misc/ScrollToColor';
 
 import Stack from '@mui/material/Stack';
 
-
 const tabs = ['Home', 'Survey', 'Community', 'FAQ'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -82,7 +81,7 @@ const HeaderNav = () => {
 							>
 							{tabs.map((tab) => (
 								<MenuItem key={tab} onClick={handleCloseNavMenu}>
-								<Typography textAlign="center">{tab}</Typography>
+									<Typography textAlign="center">{tab}</Typography>
 								</MenuItem>
 							))}
 							</Menu>
@@ -128,7 +127,7 @@ const HeaderNav = () => {
 							<Button
 								key={tab}
 								onClick={handleCloseNavMenu}
-								sx={{ my: 2, color: 'black', display: 'block' }}
+								sx={{ my: 2, color: '#656464', display: 'block', fontFamily: 'Inter', '&:hover': { color: '#2B2B39' }, paddingInline: 2 }}
 							>
 								{tab}
 							</Button>
