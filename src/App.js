@@ -15,7 +15,7 @@ const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout.jsx'))
 const Login = React.lazy(() => import('./views/pages/login/Login.jsx'))
 const Register = React.lazy(() => import('./views/pages/register/Register.jsx'))
 // const Page404 = React.lazy(() => import('./views/pages/page404/Page404'))
-// const Page500 = React.lazy(() => import('./views/pages/page500/Page500'))
+//  const Page500 = React.lazy(() => import('./views/pages/page500/Page500'))
 
 
 function App() {
