@@ -1,12 +1,12 @@
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import React from 'react'
 import theme from '../../theme';
 
 const WhomSection = () => {
   return (
-    <div sx={{paddingBlock: "5rem",}} >
-        <Typography variant='h3'>FOR WHOM IS THIS PLATFORM MEANT FOR ?</Typography>
-    </div>
+    <Box sx={{ paddingInline:"7rem", paddingBlock: "2.5rem",}} >
+        <Typography variant='h4' sx= {{fontSize: {xs: '20px',md:"40px"},}}>FOR WHOM IS THIS PLATFORM MEANT FOR ?</Typography>
+    </Box>
   )
 }
 
