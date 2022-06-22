@@ -1,12 +1,12 @@
 import React from 'react'
-import { Paper } from '@mui/material';
+import { Box } from '@mui/material';
 
 const WhySection = () => {
-  return (
-  <Paper elevation={0}>
-        WhySection
-  </Paper>
-  )
+  	return (
+  		<Box>
+  		    WhySection
+  		</Box>
+  	)
 }
 
 export default WhySection;
