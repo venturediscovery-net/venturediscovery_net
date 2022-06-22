@@ -12,7 +12,7 @@ import theme from '../../theme';
 const Home = () => {
   return (
     <ThemeProvider theme ={theme}>
-    <Box sx = {{ backgroundColor: "txtDark",}}>
+    <Box sx = {{ backgroundColor: "GhostWhite",}}>
         <VideoSection></VideoSection>
         <WhomSection></WhomSection>
         <WhySection></WhySection>
