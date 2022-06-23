@@ -93,13 +93,13 @@ const HeaderNav = () => {
 
 						<CardMedia
 							component="img"
-							sx={{ width: 50 }}
+							sx={{ width: 40 }}
 							image={Logo}
 							alt="Logo"
 						/>
 						<CardMedia
 							component="img"
-							sx={{ ml: 1, width: 120 }}
+							sx={{ ml: 1, width: 90 }}
 							image={Logo_txt}
 							alt="Logo"
 						/>
@@ -166,9 +166,7 @@ const HeaderNav = () => {
 						</Box>
 
 						<Stack sx = {{display: { xs: 'none' } }} spacing={2} direction="row">
-							{/* <Button variant="text">Text</Button> */}
 							<Button variant="contained">Sign Up</Button>
-							{/* <Button variant="outlined">Outlined</Button> */}
 						</Stack>
 
 						</Toolbar>
