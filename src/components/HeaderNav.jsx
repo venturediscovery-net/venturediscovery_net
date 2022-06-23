@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {useNavigate} from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -19,11 +20,16 @@ import theme from '../theme.js';
 import ScrollToColor from '../misc/ScrollToColor';
 
 import Stack from '@mui/material/Stack';
+ 
 
-const tabs = ['Home', 'Survey', 'Community', 'FAQ'];
+
+
+const tabs = [['Home',"/home"], ['Survey','/survey'], ['Community',"/commumity"],[ 'FAQ',"/faq"]];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const HeaderNav = () => {
+
+
   	const [anchorElNav, setAnchorElNav] = React.useState(null);
   	const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -41,6 +47,11 @@ const HeaderNav = () => {
   	const handleCloseUserMenu = () => {
   	  	setAnchorElUser(null);
   	};
+	const navigate = useNavigate();
+
+	const navigateTo = (location) => {
+		navigate(location);
+	};
 
   	return (
   	  	<ThemeProvider theme={theme}>
@@ -80,8 +91,8 @@ const HeaderNav = () => {
 								}}
 							>
 							{tabs.map((tab) => (
-								<MenuItem key={tab} onClick={handleCloseNavMenu}>
-									<Typography textAlign="center">{tab}</Typography>
+								<MenuItem key={tab[0]} onClick={() => this.navigateTo(tab[1])} >
+									<Typography textAlign="center">{tab[0]}</Typography>
 								</MenuItem>
 							))}
 							</Menu>
@@ -125,11 +136,11 @@ const HeaderNav = () => {
 						<Box sx={{ mr:5, justifyContent: "flex-end", flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 							{tabs.map((tab) => (
 							<Button
-								key={tab}
-								onClick={handleCloseNavMenu}
+								key={tab[0]}
+								onClick={() => this.navigateTo(tab[1])}
 								sx={{ my: 2, color: '#656464', display: 'block', fontFamily: 'Inter', '&:hover': { color: '#2B2B39' }, paddingInline: 2 }}
 							>
-								{tab}
+								{tab[0]}
 							</Button>
 							))}
 						</Box>

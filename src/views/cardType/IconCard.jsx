@@ -16,7 +16,7 @@ import React from "react";
                     <Card sx={{ width: 235, padding: 3 }}>
                     
                     <Typography variant="h4" sx={{ textAlign: "right", fontWight: "" }}>{detail.title}</Typography>
-                    <p style={{ textAlign: "right", margin:0 }}>You have built a web /mobile app but unable to test with real users</p>
+                    <p style={{ textAlign: "right", margin:0 }}>{detail.desc}</p>
                 </Card>
             </Box>
         )}

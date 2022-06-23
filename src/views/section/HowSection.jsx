@@ -17,7 +17,7 @@ const HowSection = () => {
             </TimelineSeparator>
             <TimelineContent sx={{ py: '12px', px: 2 }}>
                 <Typography variant="h6" component="span">Step 01</Typography>
-                <Typography>Register yourself as a Beta user, create your online persona</Typography>
+                <Typography>Register yourself as a Beta user, create your online persona.</Typography>
             </TimelineContent>
         </TimelineItem>
 
@@ -29,7 +29,7 @@ const HowSection = () => {
             </TimelineSeparator>
             <TimelineContent sx={{ py: '12px', px: 2 }}>
                 <Typography variant="h6" component="span">Step 02</Typography>
-                <Typography>List problems you yourself are seeking solution to</Typography>
+                <Typography>List problems you yourself are seeking solution to.</Typography>
             </TimelineContent>
         </TimelineItem>
 
@@ -41,7 +41,7 @@ const HowSection = () => {
             </TimelineSeparator>
             <TimelineContent sx={{ py: '12px', px: 2 }}>
                 <Typography variant="h6" component="span">Step 03</Typography>
-                <Typography>Write feedback for the apps and earn credits to create your own survey</Typography>
+                <Typography>Write feedback for apps by other students and collect credit points.</Typography>
             </TimelineContent>
         </TimelineItem>
 
@@ -52,7 +52,7 @@ const HowSection = () => {
             </TimelineSeparator>
             <TimelineContent sx={{ py: '12px', px: 2 }}>
                 <Typography variant="h6" component="span">Step 04</Typography>
-                <Typography>Use the credits to run survey for your own product </Typography>
+                <Typography>Use the credits to run survey for your own product, for free.</Typography>
             </TimelineContent>
         </TimelineItem>
     </Timeline> 

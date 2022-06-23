@@ -1,8 +1,8 @@
 
  const string = {
-    'title':"Have an Unsolved Problem / Unserved Need ?<br/> Be a part of the Solution",
-    'whomTitle': "<span style={{color:\"SkyBlue\"}} > WHO </span> WILL BENEFIT FROM OUR PLATFORM?",
-    'whyTitle': "WHY SHOULD YOU USE THIS PLATFORM?",
+    'title':"Have an Unsolved Problem / Unserved Need ?<br/> Be a part of the Solution!",
+    'whomTitle': "For <span style={{color:\"SkyBlue\"}} > whom?</span>",
+    'whyTitle': "Benefits:",
     'howTitle': "<span style={{color:\"RosyBrown\"}} >HOW</span> DOES IT WORK?",
     'whypt': ["Test your classroom / theory learnings with real world Beta Users", 
         "Add credibility to your development / coding capability. Could help meaningfully in placements",
