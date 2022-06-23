@@ -1,4 +1,4 @@
-import user from "../icon/user.svg"
+import user from "../icon/user.svg";
 
 
 const iconCardData = [
