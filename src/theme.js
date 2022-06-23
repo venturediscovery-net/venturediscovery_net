@@ -32,6 +32,9 @@ let theme = createTheme({
   	  	blue:{
   	  	    main: '#217BF4',
   	  	},
+		xyzColor: {
+			main: '#62CD8D',
+		}
   	},
 	components: {
 		MuiTypography: {
