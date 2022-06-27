@@ -31,8 +31,10 @@ const CTASection = () => {
                 variant='h6'
                 sx={{
                     textAlign: "center",
-                    fontSize: { xs: '1.5rem', md: "2.5rem" },
-                    fontFamily: 'Frank Ruhl Libre'
+                    fontSize: { xs: '1.5em', md: "2.5em" },
+                    fontFamily: 'Frank Ruhl Libre',
+                    lineHeight: "1.2em",
+                    margin: "1rem"
                 }}>
                 We’re in process of creating a community
             </Typography>
@@ -44,7 +46,12 @@ const CTASection = () => {
                     paddingBottom: { md: "2rem", xs: "1rem", },
                     borderBottom: "1px solid black",
                     fontFamily: 'Inter',
-                    lineHeight: '1.25rem'
+                    lineHeight: '1.25rem',
+                    fontWeight: '500',
+                    '@media (min-width:900px)': {
+                        fontSize: "1.25rem",
+                    },
+                    color: '#3E3E3E'
                 }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nibh duis id ipsum non phasellus cum volutpat, dapibus. Purus nulla odio venenatis egestas velit tempor. Ac.
             </Typography>
