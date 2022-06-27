@@ -19,7 +19,7 @@ const heading = {
 const Home = () => {
   return (
     <ThemeProvider theme ={theme}>
-        <Box sx = {{ backgroundColor: "GhostWhite",}}>
+        <Box sx = {{boxSizing:"border-box", backgroundColor: "GhostWhite",paddingInline:{xs:"5%",md:"10%",}}}>
             <VideoSection></VideoSection>
             <WhomSection></WhomSection>
             <WhySection></WhySection>

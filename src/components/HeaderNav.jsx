@@ -18,7 +18,7 @@ import Logo_txt from '../assets/brand/Logo_txt.svg';
 import { ThemeProvider } from '@mui/private-theming';
 import theme from '../theme.js';
 import ScrollToColor from '../misc/ScrollToColor';
-
+import navLogo from '../assets/icon/navLogo.svg';
 import Stack from '@mui/material/Stack';
  
 
@@ -100,34 +100,34 @@ const HeaderNav = () => {
 
 
 						{/* LOGO */}
-						<Toolbar sx={{ flexGrow: 1,  mr:5,  justifyContent: "center",  display: { xs: 'flex', md: 'none' } }}>
+						<Toolbar sx={{ flexGrow: 1,    justifyContent: "center",  display: { xs: 'flex', md: 'none' } }}>
 
-						<CardMedia
+						{/* <CardMedia
 							component="img"
 							sx={{ width: 40 }}
-							image={Logo}
+							image={navLogo}
 							alt="Logo"
-						/>
+						/> */}
 						<CardMedia
 							component="img"
-							sx={{ ml: 1, width: 90 }}
-							image={Logo_txt}
+							sx={{ width: 200 }}
+							image={navLogo}
 							alt="Logo"
 						/>
 						</Toolbar >
 
 					<Toolbar sx={{ mr:5, display: { xs: 'none', md: 'flex' } }}>
 
-						<CardMedia
+						{/* <CardMedia
 							component="img"
 							sx={{ width: 50 }}
 							image={Logo}
 							alt="Logo"
-						/>
+						/> */}
 						<CardMedia
 							component="img"
-							sx={{ ml: 1, width: 120 }}
-							image={Logo_txt}
+							sx={{ ml: 1, width: 290 }}
+							image={navLogo}
 							alt="Logo"
 						/>
 						</Toolbar >

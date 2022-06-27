@@ -11,14 +11,29 @@ import React from "react";
         {props.details.map((detail,index) => 
             <Box key = {index} sx={{display:"flex", flexDirection:"column", alignItems:"center", }}> 
                 <CardMedia
-                        sx={{ display: "flex", backgroundColor:detail.iconbg , borderRadius: "10px", width: '40px', height: '40px', transform: "translate(-5.5rem,30px)", padding: "10px" }}
+                        sx={{ display: "flex", 
+                            backgroundColor:detail.iconbg , 
+                            borderRadius: "10px", 
+                            width: '40px', 
+                            height: '40px', 
+                            transform: "translate(-5.5rem,30px)", 
+                            padding: "10px" }}
                         component="img"
                         image={detail.icon}
                         alt="User" />
                 <Card sx={{ width: 235,height:120, padding: 3,borderRadius: "15px", boxShadow: "0px 4px 40px rgba(0, 0, 0, 0.19)"}}>
                     
-                    <Typography variant="h4" sx={{ textAlign: "right", fontWight: "500" , borderBottom:"0.5px solid gray", transform: "translate(0,-1rem)"}}>{detail.title}</Typography>
-                    <p style={{ textAlign: "right", margin:5 }}>{detail.desc}</p>
+                    <Typography 
+                        variant="h4" 
+                        sx={{ textAlign: "right", 
+                            fontSize: {xs: '1.6rem', md:"2.4rem"},
+                            fontWeight: "500" , color:"#383838",
+                            borderBottom:"0.5px solid gray", 
+                            transform: "translate(0,-1rem)"}}>
+                        {detail.title}
+                    </Typography>
+
+                    <p style={{ color:"#383838",textAlign: "right", margin:5 }}>{detail.desc}</p>
                 </Card>
             </Box>
         )}

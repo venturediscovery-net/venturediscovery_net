@@ -1,42 +1,62 @@
 import React from 'react'
-import {  Grid, Paper, Typography } from '@mui/material';
+import { Grid, Paper, Typography, Box, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import getString from '../../assets/data/getString';
-// import circle from "../../assets/icon/circle.svg"
+import CheckIcon from '@mui/icons-material/Check';
 
 const why_list = [
-        "Add credibility to your development / coding capability. Could help meaningfully in placements",
-	"Test your classroom / theory learnings with real world Beta Users", 
-        "Make a big difference in the development career / startup journey of a fellow student/entrepreneur",
-        "Be a part of the solution",
-        "Collect feedback for your startup idea / venture - could help in raising funding",
+	"Test your classroom / theory learnings with real world Beta Users",
+	"Add credibility to your development / coding capability. Could help meaningfully in placements.",
+	"Collect feedback for your startup idea / venture - could help in raising funding",
+	"Make a big difference in the development career / startup journey of a fellow student/entrepreneur",
 
 ]
 
-function ListItem(props) {
-  return <li style={{padding:"1rem"}}>{props.value}</li>;
-}
+// function ListItem(props) {
+// 	return <li style={{ padding: "1rem", fontSize: { xs: '1.5rem', md: "3rem" } }}>{props.value}</li>;
+// }
 
 const WhySection = () => {
 
 	const Link = 'url("./assets/icon/circle.svg")';
+
 	const listItems = why_list.map((item, index) =>
-		<ListItem key={index} value={item} />
+		<ListItem key={index}>
+			<ListItemIcon>
+				<CheckIcon
+					fontSize='large'
+					style={{
+						color: "lightSkyBlue",
+						stroke: "lightSkyBlue",
+						strokeWidth: 1
+					}} />
+			</ListItemIcon>
+			<ListItemText primary={item} sx={{ fontSize: {md:"1.5rem"} }} />
+		</ListItem>
 	);
 
-  	return (
-  		<Paper elevation={3}  
-				sx={{ marginInline:{md:"7rem", sm:"4rem", sx:"2rem"},marginBlock:{sx:"1rem" , md:"3rem"}, padding:  { md:"2.5rem",xs:"1rem",},}}>
-        	<Typography 
-				variant='h4' 
-				sx= {{fontSize: {xs: '20px',md:"40px"},
-					padding:  { md:"1rem",xs:"1rem",}}} 
-				dangerouslySetInnerHTML={getString('whyTitle')}>
-			</Typography>
-			<ul style={{ listStyleImage:Link}}>
-					{listItems}
-			</ul>
+	return (
+		<Paper elevation={3}
+			sx={{
+                marginInline: { md: "3rem", xs: "2vw" },
+                marginBlock: { md: "3rem", xs: "1rem" },
+                padding: { md: "2.5rem", xs: "1rem", },
+			}}>
+			<Box sx={{ display: 'flex', alignItems: "center" }} >
+				<Typography
+					variant='h4'
+					sx={{
+						fontSize: { xs: '1.5rem', md: "3.5rem" },
+						padding: { md: "1rem", xs: "1rem", },
+						fontWeight: "400",
+					}}>
+					Benefits:
+				</Typography>
+			</Box>
+			<List sx={{ listStyleImage: Link }}>
+				{listItems}
+			</List>
 		</Paper>
-  	)
+	)
 }
 
 export default WhySection;
