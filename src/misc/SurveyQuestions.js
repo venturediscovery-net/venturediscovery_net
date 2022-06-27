@@ -2,7 +2,7 @@ export const SurveyQuestions = [
     {
         "ID": 1,
         "Type": "SA",
-        "QText": "What's your email?"
+        "QText": "What's your Email?"
     },
     {
         "ID": 2,
@@ -10,8 +10,7 @@ export const SurveyQuestions = [
         "QText": "Student / Qualified?",
         "QOptions": [
             "Student",
-            "Qualified",
-            "Other"
+            "Qualified"
         ]
     },
     {
@@ -19,9 +18,9 @@ export const SurveyQuestions = [
         "Type": "MCQ",
         "QText": "Have you developed any product before or developing now?",
         "QOptions": [
-            "Developed in the past",
-            "Developing now",
-            "Plan to develop in the future",
+            "Yes. Developed in the past",
+            "Yes. Developing now",
+            "No. Plan to develop in the future",
             "Other"
         ]
     },
@@ -56,8 +55,7 @@ export const SurveyQuestions = [
             "Always",
             "Most of the times",
             "Sometimes",
-            "Never",
-            "Other"
+            "Never"
         ]
     },
     {
@@ -68,14 +66,13 @@ export const SurveyQuestions = [
             "1 Day",
             "< 3 Days",
             "< 5 Days",
-            "> 5 Days",
-            "Other"
+            "> 5 Days"
         ]
     },
     {
         "ID": 8,
         "Type": "MCQ",
-        "QText": "Do you feel the need for a structured platform to share new product development/feature and receive quick actionable feedback?",
+        "QText": "Do you feel the need for a structured platform to share new product development/feature and receive quick actionable feedback from the users?",
         "QOptions": [
             "A new solution will really be helpful",
             "I am satisfied with existing solutions",
@@ -84,16 +81,16 @@ export const SurveyQuestions = [
     },
     {
         "ID": 9,
-        "Type": "LA",
-        "QText": "Any one problem statement relating to web/app dev you would want the Venture Discovery platform to help you with? (Max. 2 sentences)"
+        "Type": "SA",
+        "QText": "Relating to your web/app dev - share any one problem statement you would want the Venture Discovery platform to help you with? (Max. 2 sentences)"
     },
-    {
-        "Type": "MCQ",
-        "QText": "Are you up for the session?",
-        "QOptions": [
-            "Yes",
-            "No",
-            "Later"
-        ]
-    }
+    // {
+        // "Type": "MCQ",
+        // "QText": "Are you up for the session?",
+        // "QOptions": [
+        //     "Yes",
+        //     "No",
+        //     "Later"
+        // ]
+    // }
 ]
