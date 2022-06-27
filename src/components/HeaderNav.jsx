@@ -91,7 +91,7 @@ const HeaderNav = () => {
 								}}
 							>
 							{tabs.map((tab) => (
-								<MenuItem key={tab[0]} onClick={() => this.navigateTo(tab[1])} >
+								<MenuItem key={tab[0]} onClick={() => navigateTo(tab[1])} >
 									<Typography textAlign="center">{tab[0]}</Typography>
 								</MenuItem>
 							))}
@@ -137,7 +137,7 @@ const HeaderNav = () => {
 							{tabs.map((tab) => (
 							<Button
 								key={tab[0]}
-								onClick={() => this.navigateTo(tab[1])}
+								onClick={() => navigateTo(tab[1])}
 								sx={{ my: 2, color: '#656464', display: 'block', fontFamily: 'Inter', '&:hover': { color: '#2B2B39' }, paddingInline: 2 }}
 							>
 								{tab[0]}
@@ -146,7 +146,7 @@ const HeaderNav = () => {
 						</Box>
 							
 						{/* AVATAR */}
-						<Box sx={{ flexGrow: 0 }}>
+						<Box sx={{ flexGrow: 0 , display:"none"}}>
 							<Tooltip title="Open settings">
 							<IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
 								<Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -176,7 +176,7 @@ const HeaderNav = () => {
 							</Menu>
 						</Box>
 
-						<Stack sx = {{display: { xs: 'none' } }} spacing={2} direction="row">
+						<Stack sx = {{display: { xs: 'flex' } }} spacing={2} direction="row" onClick={() => navigateTo("/register")}>
 							<Button variant="contained">Sign Up</Button>
 						</Stack>
 

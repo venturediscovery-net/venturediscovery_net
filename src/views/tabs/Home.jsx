@@ -9,17 +9,24 @@ import WhySection from '../section/WhySection';
 import { ThemeProvider } from '@mui/private-theming';
 import theme from '../../theme';
 
+const heading = {
+    title:"Have an Unsolved Problem / Unserved Need ?<br/> Be a part of the Solution!",
+    whomTitle: "For <span style={{color:\"SkyBlue\"}} > whom?</span>",
+    whyTitle: "Benefits:",
+    howTitle: "<span style={{color:\"RosyBrown\"}} >HOW</span> DOES IT WORK?",
+
+}
 const Home = () => {
   return (
     <ThemeProvider theme ={theme}>
-    <Box sx = {{ backgroundColor: "GhostWhite",}}>
-        <VideoSection></VideoSection>
-        <WhomSection></WhomSection>
-        <WhySection></WhySection>
-        <HowSection></HowSection>
-        <CTASection></CTASection>
-        <StatsSection></StatsSection>
-    </Box>
+        <Box sx = {{ backgroundColor: "GhostWhite",}}>
+            <VideoSection></VideoSection>
+            <WhomSection></WhomSection>
+            <WhySection></WhySection>
+            <HowSection></HowSection>
+            <CTASection></CTASection>
+            {/* <StatsSection></StatsSection> */}
+        </Box>
     </ThemeProvider>
   )
 }

@@ -13,7 +13,7 @@ const why_list = [
 ]
 
 function ListItem(props) {
-  return <Grid container item  md={6}><li style={{padding:"1rem"}}>{props.value}</li></Grid>;
+  return <li style={{padding:"1rem"}}>{props.value}</li>;
 }
 
 const WhySection = () => {
@@ -24,17 +24,16 @@ const WhySection = () => {
 	);
 
   	return (
-  		<Paper elevation={0}  sx={{ marginInline:{md:"7rem", sm:"4rem", sx:"2rem"},marginBlock:{sx:"1rem" , md:"3rem"}, padding:  { md:"2.5rem",xs:"1rem",},}}>
+  		<Paper elevation={3}  
+				sx={{ marginInline:{md:"7rem", sm:"4rem", sx:"2rem"},marginBlock:{sx:"1rem" , md:"3rem"}, padding:  { md:"2.5rem",xs:"1rem",},}}>
         	<Typography 
 				variant='h4' 
 				sx= {{fontSize: {xs: '20px',md:"40px"},
-					padding:  { md:"2rem",xs:"1rem",}}} 
+					padding:  { md:"1rem",xs:"1rem",}}} 
 				dangerouslySetInnerHTML={getString('whyTitle')}>
 			</Typography>
 			<ul style={{ listStyleImage:Link}}>
-				<Grid container spacing={2}>
 					{listItems}
-				</Grid>
 			</ul>
 		</Paper>
   	)

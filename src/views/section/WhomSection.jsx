@@ -8,8 +8,8 @@ import IconCard from '../cardType/IconCard';
 const WhomSection = () => {
   return (
     <Box sx={{ marginInline:{md:"7rem", sm:"4rem", sx:"2rem"}, paddingBlock: "2.5rem",}} >
-        <Typography variant='h4' sx= {{fontSize: {xs: '20px',md:"40px"},}} dangerouslySetInnerHTML={getString('whomTitle')}></Typography>
-        <Container sx={{ display: "flex", justifyContent:"space-around", flexDirection: {md:"row", sm:"column", xs:"column"}}}>
+        <Typography variant='h4' sx= {{color:"LightSkyBlue", fontSize: {xs: '20px',md:"40px"},}}>For </Typography><Typography variant='h4'>whom:</Typography>
+        <Container sx={{ display: "flex", justifyContent:"space-around" , flexWrap:"wrap", flexDirection: {md:"row"}}}>
             <IconCard  details ={iconCardData} />
         </Container>
     </Box>

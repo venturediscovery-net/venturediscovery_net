@@ -1,8 +1,10 @@
 import React, {  Suspense } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
-
 import './App.css';
+import { createTheme ,responsiveFontSizes, ThemeProvider} from '@mui/material';
 
+// var theme = createTheme();
+// theme = responsiveFontSizes(theme);
 // const loading = (
 //   <div className="pt-3 text-center">
 //     <div className="sk-spinner sk-spinner-pulse"></div>
@@ -21,6 +23,7 @@ const Register = React.lazy(() => import('./views/pages/register/Register.jsx'))
 
 function App() {
   return (
+	// <ThemeProvider>
 		<HashRouter>
 			<Suspense >
 				<Routes>
@@ -32,7 +35,9 @@ function App() {
 				</Routes>
 			</Suspense>
 		</HashRouter>
+	// </ThemeProvider>
     )
 }
 
 export default App;
+

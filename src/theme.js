@@ -1,6 +1,7 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme ,responsiveFontSizes} from '@mui/material/styles';
+ 
 
-let theme = createTheme({
+const theme = createTheme({
   	palette: {
   	  	frenchSkyBlue: {
   	  	  	main: '#FFC480',
