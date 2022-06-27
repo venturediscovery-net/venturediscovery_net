@@ -12,6 +12,7 @@ const theme = createTheme({
 					borderRadius: 8,
 					boxShadow: '0px 30px 56px rgba(0, 0, 0, 0.08)',
 					marginTop: '1.2rem',
+					// width: '100%',
 					'@media (min-width:600px)': {
 						marginTop: '2.5rem',
 					},
@@ -21,7 +22,7 @@ const theme = createTheme({
 		MuiTypography: {
 			styleOverrides: {
 				root: {
-					fontFamily: 'Inter'
+					fontFamily: 'Segoe UI'
 				},
 				h5: {
 					fontSize: '1.2rem',
@@ -50,7 +51,7 @@ const TitleDescriptionCard = (props) => {
 				width: 'fit-content',
 			}}>
 				<CardContent sx={{ display: 'flex', flexDirection: 'column'}}>
-					<Typography variant='h5' sx={{ fontWeight: 'bold' }} color="#484848" gutterBottom>
+					<Typography variant='h5' sx={{ fontWeight: '600' }} color="#484848" gutterBottom>
 						{props.title}
 					</Typography>
 					{props.description.map((desc, index) => {

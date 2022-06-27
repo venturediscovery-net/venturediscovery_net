@@ -32,6 +32,7 @@ const CTASection = () => {
                 sx={{
                     textAlign: "center",
                     fontSize: { xs: '1.5rem', md: "2.5rem" },
+                    fontFamily: 'Frank Ruhl Libre'
                 }}>
                 We’re in process of creating a community
             </Typography>
@@ -42,6 +43,8 @@ const CTASection = () => {
                     paddingInline: { md: "2rem", xs: "1rem", },
                     paddingBottom: { md: "2rem", xs: "1rem", },
                     borderBottom: "1px solid black",
+                    fontFamily: 'Inter',
+                    lineHeight: '1.25rem'
                 }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nibh duis id ipsum non phasellus cum volutpat, dapibus. Purus nulla odio venenatis egestas velit tempor. Ac.
             </Typography>
@@ -51,8 +54,10 @@ const CTASection = () => {
                     paddingTop: "2rem",
                     textAlign: "center",
                     fontSize: { xs: '1.5rem', md: "2.5rem" },
+                    fontFamily: 'Frank Ruhl Libre',
+                    lineHeight: "2.75rem"
             }}>
-                Be the 1st to know betauser community launch. Register today!
+                Be the 1st to know Beta User Community launch. Register today!
             </Typography>
             <ol>
                 <li style={{ margin: "10px", }}>I am a -</li>

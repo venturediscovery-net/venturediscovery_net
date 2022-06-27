@@ -3,6 +3,7 @@ import Card from '@mui/material/Card';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { ClickAwayListener, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
+import { questionSelected, questionDeSelected } from '../../misc/MiscellaneousFunctions';
 
 let theme = createTheme({
     components: {
@@ -26,7 +27,7 @@ let theme = createTheme({
         MuiTypography: {
 			styleOverrides: {
 				root: {
-					fontFamily: 'Inter'
+					fontFamily: 'Segoe UI'
 				},
 				h5: {
 					fontSize: '1.2rem',
@@ -57,7 +58,7 @@ let theme = createTheme({
                     '&:after': {
                         borderBottom: '2px solid #6C6C6C',
                     },
-                    fontFamily: 'Inter',
+                    fontFamily: 'Segoe UI',
                 },
             }
         }
@@ -66,37 +67,25 @@ let theme = createTheme({
 
 const ShortAnswerTextQCard = (props) => {
 
-    const questionSelected = () => {
-        let questionCard = document.querySelector(".short_answer_text_qcard");
-        questionCard.style.background = 'white';
-        questionCard.style.boxShadow = '0px 30px 56px rgba(0, 0, 0, 0.08)';
-    }
-
-    const questionDeSelected =() => {
-        let questionCard = document.querySelector(".short_answer_text_qcard");
-        questionCard.style.background = 'none';
-        questionCard.style.boxShadow = 'none';
-    }
-
     return (
         <ThemeProvider theme={theme}>
-            <ClickAwayListener onClickAway={questionDeSelected}>    
+            <ClickAwayListener onClickAway={() => questionDeSelected(props.id)}>    
                 <Card 
-                    className="short_answer_text_qcard"
+                    className={"qcard" + props.id}
                     sx={{ 
 			        	minWidth: 275,
 			        	height: 'fit-content', 
-			        	width: '75%',
+			        	width: '100%',
                         display: 'flex',
                         flexDirection: 'row'
 			        }}
-                    onClick={questionSelected}
+                    onClick={() => questionSelected(props.id)}
                 >
-                    <Box sx={{ mt: 1.25 }}>
+                    <Box sx={{ mt: 0.5 }}>
                         <Typography variant='subtitle2' color="#101828">Q{props.id}</Typography>
                     </Box>
                     <Box sx={{ ml: 2, width: '100%' }}>    
-                        <Typography variant='h4' color="#101828">{props.qText} *</Typography>
+                        <Typography variant='h5' color="#101828">{props.qText} *</Typography>
                         <TextField variant='standard' placeholder='Type your answer…'></TextField>
                     </Box>
                 </Card>

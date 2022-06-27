@@ -2,14 +2,29 @@ import React from 'react'
 import { Grid, Paper, Typography, Box, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import getString from '../../assets/data/getString';
 import CheckIcon from '@mui/icons-material/Check';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const why_list = [
 	"Test your classroom / theory learnings with real world Beta Users",
 	"Add credibility to your development / coding capability. Could help meaningfully in placements.",
 	"Collect feedback for your startup idea / venture - could help in raising funding",
 	"Make a big difference in the development career / startup journey of a fellow student/entrepreneur",
-
 ]
+
+let theme = createTheme({
+	components: {
+		MuiTypography: {
+			styleOverrides: {
+				root: {
+					'@media (min-width:900px)': {
+						fontSize: "1.5rem",
+					}
+				}
+			}
+		}
+	}
+});
+
 
 // function ListItem(props) {
 // 	return <li style={{ padding: "1rem", fontSize: { xs: '1.5rem', md: "3rem" } }}>{props.value}</li>;
@@ -21,16 +36,20 @@ const WhySection = () => {
 
 	const listItems = why_list.map((item, index) =>
 		<ListItem key={index}>
-			<ListItemIcon>
+			<ListItemIcon sx={{ minWidth: 'auto', mr: {xs: 1.5, md: 2.5} }}>
 				<CheckIcon
-					fontSize='large'
-					style={{
+					sx={{
+						'@media (min-width:900px)': {
+							fontSize: "2rem",
+						},
 						color: "lightSkyBlue",
 						stroke: "lightSkyBlue",
 						strokeWidth: 1
 					}} />
 			</ListItemIcon>
-			<ListItemText primary={item} sx={{ fontSize: {md:"1.5rem"} }} />
+			<ThemeProvider theme={theme}>	
+				<ListItemText primary={item} sx={{ fontSize: "2rem" }} />
+			</ThemeProvider>
 		</ListItem>
 	);
 
