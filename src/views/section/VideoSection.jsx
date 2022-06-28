@@ -11,15 +11,16 @@ const VideoSection = () => {
 		<Box sx={{
 			color: "#383838",
 			display: { xs: "flex" },
-			paddingBlock: { xs: "3vh", md: "9%" },
+			paddingBlock: { xs: "3vh", md: "20vh" },
 			flexDirection: { xs: "column", md: "row" },
 			justifyContent: "space-between",
-			alignItems: {xs:"center", md:"left"},
+			alignItems: { xs: "center", md: "left" },
 			zIndex: "-10",
-			background: "GhostWhite",
+			background: "White",
+			height: "90%"
 		}} >
 
-			<Box sx={{ flexGrow: 1, textAlign:  {xs:"center", md:"left"}, justifyContent: "center", }}>
+			<Box sx={{ flexGrow: 1, textAlign: { xs: "center", md: "left" }, justifyContent: "center", }}>
 				<Typography
 					variant="h2"
 					component="h1"

@@ -18,7 +18,7 @@ import Logo_txt from '../assets/brand/Logo_txt.svg';
 import { ThemeProvider } from '@mui/private-theming';
 import theme from '../theme.js';
 import ScrollToColor from '../misc/ScrollToColor';
-import navLogo from '../assets/icon/navLogo.svg';
+import navLogo from '../assets/brand/navLogo.svg';
 import Stack from '@mui/material/Stack';
  
 
