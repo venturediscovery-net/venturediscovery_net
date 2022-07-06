@@ -33,7 +33,7 @@ let theme = createTheme({
         MuiTypography: {
 			styleOverrides: {
 				root: {
-					fontFamily: 'Segoe UI'
+					fontFamily: 'Inter'
 				},
 				h5: {
 					fontSize: '1.2rem',
@@ -75,7 +75,7 @@ let theme = createTheme({
                     '&:after': {
                         borderBottom: '2px solid #6C6C6C',
                     },
-                    fontFamily: 'Segoe UI',
+                    fontFamily: 'Inter',
                 },
             }
         }

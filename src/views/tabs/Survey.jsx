@@ -6,6 +6,8 @@ import MultipleChoiceQCard from '../QuestionCards/MultipleChoiceQCard';
 import { useState, useEffect  } from 'react';
 import { SurveyQuestions } from '../../misc/SurveyQuestions';
 import { useCallback } from 'react';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { LoadingButton } from '@mui/lab';
 
 var surveyTitle = "Is user feedback on your web/app dev actionable?";
 var surveyDescription = [
@@ -38,7 +40,10 @@ const Survey = () => {
 	// let questionSelected;
 	// let questionDeSelected;
 
-	
+	const [loading, setLoading] = React.useState(false);
+  	function handleClick() {
+  	  	setLoading(true);
+  	}
 
   	return (
 		<Box sx={{ height: 'fit-content', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingInline: 25 }}>
@@ -88,6 +93,16 @@ const Survey = () => {
 				setSurveyAnswers={setSurveyAnswers}
 				key={surpriseQuestion.ID}
 			/>
+			<LoadingButton
+          		size="small"
+          		onClick={handleClick}
+          		endIcon={<ArrowForwardIcon />}
+          		loading={loading}
+          		loadingPosition="end"
+          		variant="contained"
+        	>
+        	  	Submit
+        	</LoadingButton>
 		</Box>
   	)
 }
