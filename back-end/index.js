@@ -17,6 +17,7 @@ const mongoPassword = process.env.MONGO_PASSWORD;
 const mongoDbName = process.env.MONGO_DB_NAME;
 
 Connection(mongoUsername, mongoPassword, mongoDbName);
+
 app.listen(PORT,() => console.log('Your server is up and running on PORT: ' + PORT));
 
-console.log("Hello Nodemon");
+// console.log("Hello Nodemon");
