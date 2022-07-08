@@ -112,7 +112,7 @@ export const useFormControls = () => {
 
         let consentData = finalValues;
 
-        const res = await fetch('http://localhost:3000/stored', {
+        const res = await fetch('http://localhost:3000/storeContactConsent', {
             method: 'POST',
             body: JSON.stringify(consentData),
             headers: {
@@ -218,12 +218,11 @@ export default function ContactConsent() {
                                     row
                                     aria-labelledby="demo-row-radio-buttons-group-label"
                                     name="userType"
-                                    // onChange={(event) => setUserType(event.target.value)}
                                     onChange={handleInputValue}
                                     {...(errors["userType"] && { error: true, helperText: errors["userType"] })}
                                 >
-                                    <FormControlLabel value="Tech Student" control={<Radio />} label="Tech Student" />
-                                    <FormControlLabel value="User Only" control={<Radio />} label="User Only" />
+                                    <FormControlLabel value="Tech student / professional" control={<Radio />} label="Tech student / professional" />
+                                    <FormControlLabel value="Entrepreneur" control={<Radio />} label="Entrepreneur" />
                                     <FormControlLabel value="Both" control={<Radio />} label="Both" />
                                 </RadioGroup>
                             </Grid>
@@ -240,8 +239,8 @@ export default function ContactConsent() {
                                     onChange={handleInputValue}
                                     {...(errors["userTypeSelected"] && { error: true, helperText: errors["userTypeSelected"] })}
                                 >
-                                    <FormControlLabel value="Tech Student" control={<Radio />} label="Tech Student" />
-                                    <FormControlLabel value="User Only" control={<Radio />} label="User Only" />
+                                    <FormControlLabel value="Beta user only" control={<Radio />} label="Beta user only" />
+                                    <FormControlLabel value="Developer testing my product with Beta users" control={<Radio />} label="Developer testing my product with Beta users" />
                                     <FormControlLabel value="Both" control={<Radio />} label="Both" />
                                 </RadioGroup>
                             </Grid>
