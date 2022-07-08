@@ -8,6 +8,7 @@ import { SurveyQuestions } from '../../misc/SurveyQuestions';
 import { useCallback } from 'react';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { LoadingButton } from '@mui/lab';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 var surveyTitle = "Is user feedback on your web/app dev actionable?";
 var surveyDescription = [
@@ -31,22 +32,69 @@ var surpriseQuestion = {
     ]
 }
 
+let theme = createTheme({
+	components: {
+		MuiLoadingButton: {
+			styleOverrides: {
+				root: {
+					width: 'fit-content',
+					marginLeft: 'auto',
+					background: '#475467',
+					borderRadius: '8px',
+					'@media (max-width:600px)': {
+                        marginTop: '30px',
+                    },
+                    '@media (min-width:600px)': {
+                        marginTop: '40px'
+                    },
+					'&:hover': {
+						background: '#303947'
+					}
+				}
+			}
+		}
+	}
+});
 
 const Survey = () => {
-	let [surveyAnswers, setSurveyAnswers] = useState({
+	const [markedAnswers, setMarkedAnswers] = useState({
 		1: null, 2: null, 3: null, 4: null, 5: null, 6: null, 7: null, 8: null, 9: null, 10: null,
 	});
 
-	// let questionSelected;
-	// let questionDeSelected;
-
 	const [loading, setLoading] = React.useState(false);
-  	function handleClick() {
+
+	const [snackBarState, setSnackBarState] = React.useState({
+		open: false
+	});
+
+	const { open } = snackBarState;
+
+	const handleClick = () => () => {
+		setSnackBarState({open: true});
+	};
+
+	const handleClose = () => {
+		setSnackBarState({open: false});
+	};
+
+  	function handleSurveySubmit() {
+		console.log(markedAnswers);
+		for (const [key, value] of Object.entries(markedAnswers)) {
+			if (value === null || value == '') {
+				
+			}
+		}
   	  	setLoading(true);
   	}
 
   	return (
-		<Box sx={{ height: 'fit-content', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingInline: 25 }}>
+		<Box 
+			sx = {{ 
+				height: 'fit-content', 
+				display: 'flex', 
+				flexDirection: 'column', 
+				paddingInline: { xs: '5%', sm: '75px', md: '100px', lg: '150px' },
+			}}>
 			<TitleDescriptionCard 
 				title = {surveyTitle}
 				description = {surveyDescription}
@@ -56,8 +104,8 @@ const Survey = () => {
 					width: '100%', 
 					display: 'flex', 
 					flexDirection: 'column', 
-					alignItems: 'center',
-					// marginBottom: 50
+					// alignItems: 'center',
+					marginBottom: 50
 				}}
 				noValidate 
 				autoComplete='off'
@@ -68,41 +116,47 @@ const Survey = () => {
 							<ShortAnswerTextQCard 
 								id={question.ID} 
 								qText={question.QText} 
+								markedAnswers={markedAnswers}
+								setMarkedAnswers={setMarkedAnswers}
 								key={question.ID}
 							/>)
 					} else if (question.Type == "MCQ") {
 						return (
 							<MultipleChoiceQCard 
-								id={question.ID} 
+								id={question.ID}
 								qText={question.QText}
 								qOptions={question.QOptions}
-								setSurveyAnswers={setSurveyAnswers}
+								markedAnswers={markedAnswers}
+								setMarkedAnswers={setMarkedAnswers}
 								key={question.ID}
 							/>
 						) 
 					}
 				})}
+				<TitleDescriptionCard 
+					title = {surpriseTitle}
+					description = {surpriseDecscription}
+				/>
+				<MultipleChoiceQCard
+					id={surpriseQuestion.ID}
+					qText={surpriseQuestion.QText}
+					qOptions={surpriseQuestion.QOptions}
+					markedAnswers={markedAnswers}
+					setMarkedAnswers={setMarkedAnswers}
+					key={surpriseQuestion.ID}
+				/>
+				<ThemeProvider theme={theme}>
+					<LoadingButton
+          				onClick={handleSurveySubmit}
+          				endIcon={<ArrowForwardIcon />}
+          				loading={loading}
+          				loadingPosition="end"
+          				variant="contained"
+        			>
+        			  	Submit
+        			</LoadingButton>
+				</ThemeProvider>
 			</form>
-			<TitleDescriptionCard 
-				title = {surpriseTitle}
-				description = {surpriseDecscription}
-			/>
-			<MultipleChoiceQCard
-				qText={surpriseQuestion.QText}
-				qOptions={surpriseQuestion.QOptions}
-				setSurveyAnswers={setSurveyAnswers}
-				key={surpriseQuestion.ID}
-			/>
-			<LoadingButton
-          		size="small"
-          		onClick={handleClick}
-          		endIcon={<ArrowForwardIcon />}
-          		loading={loading}
-          		loadingPosition="end"
-          		variant="contained"
-        	>
-        	  	Submit
-        	</LoadingButton>
 		</Box>
   	)
 }

@@ -13,9 +13,6 @@ let theme = createTheme({
 					borderRadius: 8,
 					marginTop: '1.2rem',
                     boxShadow: 'none',
-                    paddingInline: 25,
-                    paddingTop: 20,
-                    paddingBottom: 30,
                     background: 'none',
                     transition: '0.2s',
 					'@media (min-width:600px)': {
@@ -47,7 +44,6 @@ let theme = createTheme({
         MuiTextField: {
             styleOverrides: {
                 root: {
-                    width: '60%',
                     marginTop: '0.5rem',
                 },
             },
@@ -66,27 +62,40 @@ let theme = createTheme({
 });
 
 const ShortAnswerTextQCard = (props) => {
+    let qID = props.id;
+
+    const handleTextFieldAnswer = (event) => {
+        if (event.target.value != "") {
+            props.setMarkedAnswers({
+                ...props.markedAnswers,
+                [qID]: event.target.value,
+            });
+        }
+    }
 
     return (
         <ThemeProvider theme={theme}>
-            <ClickAwayListener onClickAway={() => questionDeSelected(props.id)}>    
+            <ClickAwayListener onClickAway={() => questionDeSelected(qID)}>    
                 <Card 
-                    className={"qcard" + props.id}
+                    className={"qcard" + qID}
                     sx={{ 
+                        paddingInline: { xs: '15px', sm: '25px' },
+                        paddingTop: { xs: '15px', sm: '20px' },
+                        paddingBottom: { xs: '25px', sm: '30px' },
 			        	minWidth: 275,
 			        	height: 'fit-content', 
 			        	width: '100%',
                         display: 'flex',
                         flexDirection: 'row'
 			        }}
-                    onClick={() => questionSelected(props.id)}
+                    onClick={() => questionSelected(qID)}
                 >
                     <Box sx={{ mt: 0.5 }}>
-                        <Typography variant='subtitle2' color="#101828">Q{props.id}</Typography>
+                        <Typography variant='subtitle1' color="#101828">Q{qID}</Typography>
                     </Box>
-                    <Box sx={{ ml: 2, width: '100%' }}>    
-                        <Typography variant='h5' color="#101828">{props.qText} *</Typography>
-                        <TextField variant='standard' placeholder='Type your answer…'></TextField>
+                    <Box sx={{ ml: {xs: 1.5, sm: 2}, width: '100%' }}>    
+                        <Typography sx = {{ mb: { xs: '8px' } }} variant='h5' color="#101828">{props.qText} *</Typography>
+                        <TextField onBlur={handleTextFieldAnswer} sx = {{ width: {xs: '80%', sm: '60%'} }} variant='standard' placeholder='Type your answer…'></TextField>
                     </Box>
                 </Card>
             </ClickAwayListener>

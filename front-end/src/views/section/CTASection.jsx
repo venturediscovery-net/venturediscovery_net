@@ -20,7 +20,7 @@ const CTASection = () => {
                 sx={{
                     textAlign: "center",
                     fontSize: { xs: '1.5em', md: "2.5em" },
-                    fontFamily: 'Frank Ruhl Libre',
+                    fontFamily: 'Inter',
                     lineHeight: "1.2em",
                     margin: "1rem"
                 }}>
@@ -34,14 +34,20 @@ const CTASection = () => {
                     paddingBottom: { md: "2rem", xs: "1rem", },
                     borderBottom: "1px solid black",
                     fontFamily: 'Inter',
-                    lineHeight: '1.25rem',
+                    lineHeight: '1.75rem',
                     fontWeight: '500',
                     '@media (min-width:900px)': {
                         fontSize: "1.25rem",
                     },
-                    color: '#3E3E3E'
+                    color: '#000000'
                 }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nibh duis id ipsum non phasellus cum volutpat, dapibus. Purus nulla odio venenatis egestas velit tempor. Ac.
+                {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nibh duis id ipsum non phasellus cum volutpat, dapibus. Purus nulla odio venenatis egestas velit tempor. Ac.
+                 */}
+                We're building a platform for the startups to provide them with feedback from the beta users! 
+                All you've to do is build your persona, create a survey to get feedback for your product (web / app) 
+                from the beta user community on our platform. You can use the analytics which we provide to make 
+                better decisions for the growth of your product. 
+
             </Typography>
             <Typography
                 variant='h6'
@@ -49,13 +55,12 @@ const CTASection = () => {
                     paddingTop: "2rem",
                     textAlign: "center",
                     fontSize: { xs: '1.5rem', md: "2.5rem" },
-                    fontFamily: 'Frank Ruhl Libre',
+                    fontFamily: 'Inter',
                     lineHeight: "2.75rem"
                 }}>
                 Be the 1st to know Beta User Community launch. Register today!
             </Typography>
-            
-                <_signUpBlack ></_signUpBlack>
+            <_signUpBlack ></_signUpBlack>
         </Box>
     )
 }
