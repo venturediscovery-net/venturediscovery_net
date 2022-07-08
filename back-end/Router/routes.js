@@ -1,4 +1,4 @@
-import Express from "express";
-// import storeContactConsent
+import express from "express";
+import { storeContactConsent } from "../controller/consent_controller";
 
-// route.post('/storeContactConsent', storeContactConsent);
+route.post('/storeContactConsent', storeContactConsent);

@@ -8,11 +8,33 @@ export const storeContactConsent = async (request, response) => {
     let userType = request.body.userType;
     let userTypeSelected = request.body.userTypeSelected;
 
-    // try {
+    try {
 
-    //     const exist = 
+        const exist = await consent.findOne({email:email});
 
-    // } catch {
-    //     response.status(500).json(error);
-    // }
-}
+        
+        if(exist){
+            response.status(200).json('user already exists!');
+            return;
+        }
+
+        const newUser = await User.save(
+            {email:email},
+            {
+                writeConcern: 
+                
+                {
+                    firstName : firstName,
+                    lastName : lastName,
+                    email : email,
+                    userType : userType,
+                    userTypeSelected : userTypeSelected,
+                }
+            }
+        );
+        response.status(200).json('user added sucessfully!!');
+
+    } catch {
+        response.status(500).json(error);
+    }
+} 
