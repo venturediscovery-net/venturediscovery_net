@@ -109,12 +109,10 @@ export const useFormControls = () => {
     };
 
     const postContactForm = async (finalValues) => {
-
-        let consentData = finalValues;
-
-        const res = await fetch('http://localhost:3000/storeContactConsent', {
+        console.log(finalValues);
+        const res = await fetch('http://localhost:8000/storeContactConsent', {
             method: 'POST',
-            body: JSON.stringify(consentData),
+            body: JSON.stringify(finalValues),
             headers: {
                 'Content-Type': 'application/json'
             },

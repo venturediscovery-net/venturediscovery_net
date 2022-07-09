@@ -22,7 +22,7 @@ const ConsentSchema = new mongoose.Schema({
         required: true
     },
 
-    userType: {
+    userTypeSelected: {
         type: String,
         required: true
     },
