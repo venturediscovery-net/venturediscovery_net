@@ -9,6 +9,7 @@ import { useCallback } from 'react';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { LoadingButton } from '@mui/lab';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { Snackbar } from '@mui/material';
 
 var surveyTitle = "Is user feedback on your web/app dev actionable?";
 var surveyDescription = [
@@ -52,6 +53,25 @@ let theme = createTheme({
 					}
 				}
 			}
+		},
+		MuiSnackbar: {
+			styleOverrides: {
+				root: {
+				}
+			}
+		},
+		MuiSnackbarContent: {
+			styleOverrides: {
+				root: {
+					background: '#FFFFFF',
+					justifyContent: 'center',
+					color: '#475467',
+					fontSize: '1rem',
+					borderRadius: '1rem',
+					border: '1px solid #CFDAE9',
+					boxShadow: '0px 1.25rem 1.5rem -0.25px rgba(16, 24, 40, 0.1), 0px 0.5rem 0.5rem -0.25rem rgba(16, 24, 40, 0.04)',
+				}
+			}
 		}
 	}
 });
@@ -69,22 +89,26 @@ const Survey = () => {
 
 	const { open } = snackBarState;
 
-	const handleClick = () => () => {
-		setSnackBarState({open: true});
-	};
-
 	const handleClose = () => {
 		setSnackBarState({open: false});
 	};
 
   	function handleSurveySubmit() {
 		console.log(markedAnswers);
+		setLoading(true);
 		for (const [key, value] of Object.entries(markedAnswers)) {
 			if (value === null || value == '') {
-				
+				setTimeout(() => {
+					setLoading(false);
+					setSnackBarState({open: true});
+				}, 500);
+				break;
+			} else {
+				setTimeout(() => {
+					setSnackBarState({open: true});
+				}, 1000)
 			}
 		}
-  	  	setLoading(true);
   	}
 
   	return (
@@ -157,6 +181,16 @@ const Survey = () => {
         			</LoadingButton>
 				</ThemeProvider>
 			</form>
+			<ThemeProvider theme={theme}>	
+				<Snackbar
+					sx = {{ bottom: {xs: '48px', sm: '98px'} }}
+    			    anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+    			    open={open}
+					autoHideDuration={2000}
+    			    onClose={handleClose}
+    			    message="Please answer all the questions"
+    			/>
+			</ThemeProvider>	
 		</Box>
   	)
 }
