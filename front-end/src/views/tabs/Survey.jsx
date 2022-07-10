@@ -3,13 +3,13 @@ import Box from '@mui/material/Box';
 import TitleDescriptionCard from '../../components/TitleDescriptionCard';
 import ShortAnswerTextQCard from '../QuestionCards/ShortAnswerTextQCard';
 import MultipleChoiceQCard from '../QuestionCards/MultipleChoiceQCard';
-import { useState, useEffect  } from 'react';
+import { useState } from 'react';
 import { SurveyQuestions } from '../../misc/SurveyQuestions';
-import { useCallback } from 'react';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { LoadingButton } from '@mui/lab';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Snackbar } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 var surveyTitle = "Is user feedback on your web/app dev actionable?";
 var surveyDescription = [
@@ -77,37 +77,65 @@ let theme = createTheme({
 });
 
 const Survey = () => {
+	const navigate = useNavigate();
+
+	function navigateTo() {
+		navigate("/");
+	}
+
 	const [markedAnswers, setMarkedAnswers] = useState({
 		1: null, 2: null, 3: null, 4: null, 5: null, 6: null, 7: null, 8: null, 9: null, 10: null,
 	});
 
 	const [loading, setLoading] = React.useState(false);
+	let formCompleteStatus = true;
 
 	const [snackBarState, setSnackBarState] = React.useState({
-		open: false
+		open: false,
+		message: "Everything's Good",
 	});
 
-	const { open } = snackBarState;
+	const { open, message } = snackBarState;
 
 	const handleClose = () => {
-		setSnackBarState({open: false});
+		setSnackBarState({ open: false });
 	};
 
-  	function handleSurveySubmit() {
+  	async function handleSurveySubmit() {
 		console.log(markedAnswers);
 		setLoading(true);
 		for (const [key, value] of Object.entries(markedAnswers)) {
 			if (value === null || value == '') {
+				formCompleteStatus = false;
 				setTimeout(() => {
 					setLoading(false);
-					setSnackBarState({open: true});
+					setSnackBarState({open: true, message: 'Please answer all the questions'});
 				}, 500);
 				break;
-			} else {
-				setTimeout(() => {
-					setSnackBarState({open: true});
-				}, 1000)
 			}
+			// setSnackBarState({open: true, message: "We've recorded all your responses"});
+		}
+		if (formCompleteStatus === true) {
+			// await postSurveyResponse(markedAnswers);
+			await fetch('http://localhost:8000/storeSurveyResponse', {
+    		    method: 'POST',
+    		    body: JSON.stringify(markedAnswers),
+    		    headers: {
+    		        'Content-Type': 'application/json'
+    		    },
+    		}).then(response => response.json()).then(responseJSON => {
+				if (responseJSON == 'Survey Responses Recieved Successfully!') {
+					console.log(responseJSON);
+					setTimeout(() => {
+						setLoading(false);
+						setSnackBarState({open: true, message: "We've stored all your responses successfully!"});
+					}, 1500);
+					setTimeout(() => {
+						navigateTo();
+					}, 3500);
+				}
+			});
+			// console.log(response);
 		}
   	}
 
@@ -188,7 +216,7 @@ const Survey = () => {
     			    open={open}
 					autoHideDuration={2000}
     			    onClose={handleClose}
-    			    message="Please answer all the questions"
+    			    message={message}
     			/>
 			</ThemeProvider>	
 		</Box>
