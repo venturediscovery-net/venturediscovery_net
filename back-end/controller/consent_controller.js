@@ -10,24 +10,8 @@ export const storeContactConsent = async (request, response) => {
 
     try {
 
-        // const exist = await consent.findOne({ email: email });
+        const exist = await consent.findOne({ email: email });
 
-
-        // if (exist) {
-        //     response.status(200).json('user already exists!');
-        //     return;
-        // }
-
-        // const newConsent = new consent(
-
-        //     {
-        //         firstName: firstName,
-        //         lastName: lastName,
-        //         email: email,
-        //         userType: userType,
-        //         userTypeSelected: userTypeSelected,
-        //     }
-        // );
         const newConsent = await consent.update(
             { email: email },
 
@@ -40,7 +24,11 @@ export const storeContactConsent = async (request, response) => {
             }, { upsert: true });
         // await newConsent.save();
 
-        response.status(200).json('user added sucessfully!!');
+        if (exist) {
+            response.status(200).json({ msg: 'User already exists, the details are updated!', msgType: "info" });
+        } else {
+            response.status(200).json('User added sucessfully!!');
+        }
 
     } catch (error) {
         console.log(error);
