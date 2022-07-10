@@ -22,16 +22,15 @@ export const storeContactConsent = async (request, response) => {
                 userType: userType,
                 userTypeSelected: userTypeSelected,
             }, { upsert: true });
-        // await newConsent.save();
 
         if (exist) {
-            response.status(200).json({ msg: 'User already exists, the details are updated!', msgType: "info" });
+            response.status(200).json({ msg: 'User already exists, the details are updated!', severity: "info" });
         } else {
-            response.status(200).json('User added sucessfully!!');
+            response.status(200).json({ msg: 'User added sucessfully!!', severity: "success" });
         }
 
     } catch (error) {
         console.log(error);
-        response.status(500).json(error);
+        response.status(500).json({ msg: error, severity: "error" });
     }
 } 

@@ -2,6 +2,7 @@ import React, { Suspense } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import './App.css';
 import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material';
+import { SnackbarProvider } from '../context/snackbarContext';
 
 // var theme = createTheme();
 // theme = responsiveFontSizes(theme);
@@ -25,18 +26,20 @@ const ContactConsent = React.lazy(() => import('../views/pages/contactConsent/Co
 function App() {
 	return (
 		// <ThemeProvider>
-		<HashRouter>
-			<Suspense >
-				<Routes>
-					<Route exact path="/login" name="Login Page" element={<Login />} />
-					<Route exact path="/register" name="Register Page" element={<Register />} />
-					<Route exact path="/contactConsent" name="Contact Consent Page" element={<ContactConsent />} />
-					{/* <Route exact path="/404" name="Page 404" element={<Page404 />} /> */}
-					{/* <Route exact path="/500" name="Page 500" element={<Page500 />} /> */}
-					<Route path="*" name="Home" element={<DefaultLayout />} />
-				</Routes>
-			</Suspense>
-		</HashRouter>
+		<SnackbarProvider>
+			<HashRouter>
+				<Suspense >
+					<Routes>
+						<Route exact path="/login" name="Login Page" element={<Login />} />
+						<Route exact path="/register" name="Register Page" element={<Register />} />
+						<Route exact path="/contactConsent" name="Contact Consent Page" element={<ContactConsent />} />
+						{/* <Route exact path="/404" name="Page 404" element={<Page404 />} /> */}
+						{/* <Route exact path="/500" name="Page 500" element={<Page500 />} /> */}
+						<Route path="*" name="Home" element={<DefaultLayout />} />
+					</Routes>
+				</Suspense>
+			</HashRouter>
+		</SnackbarProvider>
 		// </ThemeProvider>
 	)
 }
