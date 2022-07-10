@@ -1,7 +1,7 @@
-import React, {  Suspense } from 'react'
+import React, { Suspense } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import './App.css';
-import { createTheme ,responsiveFontSizes, ThemeProvider} from '@mui/material';
+import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material';
 
 // var theme = createTheme();
 // theme = responsiveFontSizes(theme);
@@ -12,19 +12,19 @@ import { createTheme ,responsiveFontSizes, ThemeProvider} from '@mui/material';
 // )
 
 // Containers
-const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout.jsx'))
+const DefaultLayout = React.lazy(() => import('../layout/DefaultLayout.jsx'))
 
 // Pages
-const Login = React.lazy(() => import('./views/pages/login/Login.jsx'))
-const Register = React.lazy(() => import('./views/pages/register/Register.jsx'))
-const ContactConsent = React.lazy(() => import('./views/pages/contactConsent/ContactConsent.jsx'))
+const Login = React.lazy(() => import('../views/pages/login/Login.jsx'))
+const Register = React.lazy(() => import('../views/pages/register/Register.jsx'))
+const ContactConsent = React.lazy(() => import('../views/pages/contactConsent/ContactConsent.jsx'))
 // const Page404 = React.lazy(() => import('./views/pages/page404/Page404'))
 // const Page500 = React.lazy(() => import('./views/pages/page500/Page500'))
 
 
 function App() {
-  return (
-	// <ThemeProvider>
+	return (
+		// <ThemeProvider>
 		<HashRouter>
 			<Suspense >
 				<Routes>
@@ -37,8 +37,8 @@ function App() {
 				</Routes>
 			</Suspense>
 		</HashRouter>
-	// </ThemeProvider>
-    )
+		// </ThemeProvider>
+	)
 }
 
 export default App;
