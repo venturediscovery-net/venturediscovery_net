@@ -1,11 +1,8 @@
-import React, { createContext, useState, useEffect, useContext } from "react"
+import { React, useState } from 'react';
 // import Avatar from '@mui/material/Avatar';
 import { Button, CssBaseline, TextField, FormControlLabel, Checkbox, Container, CardMedia, Typography, Box, Grid, Link, Radio, RadioGroup, FormControl, FormLabel } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import navLogo from '../../../assets/brand/navLogo.svg';
-import MySnackbars from '../../popups/MySnackbar';
-import { SnackbarContext } from "../../../context/snackbarContext";
-import { postContactConsentForm } from '../../../service/api';
 
 function Copyright(props) {
     return (
@@ -67,7 +64,6 @@ export const useFormControls = () => {
             ...temp
         });
     }
-
     const handleInputValue = (e) => {
         const { name, value } = e.target;
         setValues({
@@ -85,6 +81,19 @@ export const useFormControls = () => {
         })
     }
 
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        if (formIsValid(values)) {
+            const res = await postContactForm(values);
+            if (res) {
+                alert("You've posted your form!")
+            }
+        }
+        else {
+            console.log(values);
+            console.log("fill all the details");
+        }
+    };
 
     const formIsValid = (fieldValues = values) => {
         const isValid =
@@ -99,47 +108,39 @@ export const useFormControls = () => {
         return isValid;
     };
 
+    const postContactForm = async (finalValues) => {
+        console.log(finalValues);
+        const res = await fetch('http://localhost:8000/storeContactConsent', {
+            method: 'POST',
+            body: JSON.stringify(finalValues),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        const data_2 = await res.json();
+        return console.log(data_2);
+    };
 
     return {
         handleInputValue,
+        handleFormSubmit,
         handleCheckBox,
         formIsValid,
-        errors,
-        values
+        errors
     };
 }
 
 export default function ContactConsent() {
 
+
     const {
         handleInputValue,
+        handleFormSubmit,
         handleCheckBox,
         formIsValid,
-        errors,
-        values
+        errors
     } = useFormControls();
 
-    // Context for Snackbar
-    const {
-        setOpen,
-        setSeverity,
-        setMessage,
-    } = useContext(SnackbarContext)
-
-
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
-        if (formIsValid(values)) {
-            const res = await postContactConsentForm(values, setMessage, setOpen, setSeverity);
-            if (res) {
-                alert("You've posted your form!")
-            }
-        }
-        else {
-            console.log(values);
-            console.log("fill all the details");
-        }
-    };
 
 
     return (
@@ -263,11 +264,10 @@ export default function ContactConsent() {
                         >
                             Submit
                         </Button>
-                        <MySnackbars />
                     </FormControl>
                 </Box>
                 <Copyright sx={{ mt: 5 }} />
             </Container>
-        </ThemeProvider >
+        </ThemeProvider>
     );
 }
