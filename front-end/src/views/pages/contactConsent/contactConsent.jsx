@@ -121,9 +121,6 @@ export default function ContactConsent() {
 
     // Context for Snackbar
     const {
-        open,
-        severity,
-        message,
         setOpen,
         setSeverity,
         setMessage,
