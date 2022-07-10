@@ -9,7 +9,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { LoadingButton } from '@mui/lab';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Snackbar } from '@mui/material';
-import { postSurveyResponse } from '../../service/api.js';
+import { useNavigate } from 'react-router-dom';
 
 var surveyTitle = "Is user feedback on your web/app dev actionable?";
 var surveyDescription = [
@@ -77,6 +77,12 @@ let theme = createTheme({
 });
 
 const Survey = () => {
+	const navigate = useNavigate();
+
+	function navigateTo() {
+		navigate("/");
+	}
+
 	const [markedAnswers, setMarkedAnswers] = useState({
 		1: null, 2: null, 3: null, 4: null, 5: null, 6: null, 7: null, 8: null, 9: null, 10: null,
 	});
@@ -89,7 +95,7 @@ const Survey = () => {
 		message: "Everything's Good",
 	});
 
-	const { open } = snackBarState;
+	const { open, message } = snackBarState;
 
 	const handleClose = () => {
 		setSnackBarState({ open: false });
@@ -119,10 +125,14 @@ const Survey = () => {
     		    },
     		}).then(response => response.json()).then(responseJSON => {
 				if (responseJSON == 'Survey Responses Recieved Successfully!') {
+					console.log(responseJSON);
 					setTimeout(() => {
 						setLoading(false);
-						// setSnackBarState({open: true, message: 'Please answer all the questions'});
+						setSnackBarState({open: true, message: "We've stored all your responses successfully!"});
 					}, 1500);
+					setTimeout(() => {
+						navigateTo();
+					}, 3500);
 				}
 			});
 			// console.log(response);
@@ -206,7 +216,7 @@ const Survey = () => {
     			    open={open}
 					autoHideDuration={2000}
     			    onClose={handleClose}
-    			    message="Please answer all the questions"
+    			    message={message}
     			/>
 			</ThemeProvider>	
 		</Box>

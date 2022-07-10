@@ -49,7 +49,7 @@ const HowSection = () => {
             </Box>
             <Box sx={{ display: "flex", flexGrow: "1", justifyContent: "center", alignItem: "center", flexDirection: { xs: "column-reverse", md: "row" } }} >
                 {/* <Button variant="contained" sx={{ top: "50%", flexGrow: "5", width: "30%", maxWidth: "100px", height: "20%", margin: "10%" }}>SignUp</Button> */}
-                <Timeline position="alternate" content="none" sx={{ flexGrow: "1", maxWidth: "35rem" }}>
+                <Timeline position="alternate" content="none" sx={{ padding: { sm: '6px 16px', xs: '6px 0px' }, flexGrow: "1", maxWidth: "35rem" }}>
                     <TimelineItem className={classes.TimelineItemCls}>
                         <TimelineSeparator>
                             <TimelineDot>
@@ -61,11 +61,14 @@ const HowSection = () => {
                             <Typography
                                 variant="h6"
                                 sx={{
-                                    fontSize: { xs: '1.5rem', md: "2rem" },
+                                    fontSize: { xs: '1.3rem', sm: "2rem" },
+                                    fontWeight: 700,
                                 }}>
                                 Step 01
                             </Typography>
-                            <Typography>Register yourself as a Beta user, create your online persona.</Typography>
+                            <Typography sx={{ fontSize: { xs: '0.95rem', sm: '1rem' }, lineHeight: { xs: '1.2', sm: '1.5' }}}>
+                                Register yourself as a Beta user, create your online persona.
+                            </Typography>
                         </TimelineContent>
                     </TimelineItem>
 
@@ -81,9 +84,12 @@ const HowSection = () => {
                             <Typography
                                 variant="h6"
                                 sx={{
-                                    fontSize: { xs: '1.5rem', md: "2rem" },
+                                    fontSize: { xs: '1.3rem', sm: "2rem" },
+                                    fontWeight: 700,
                                 }}>Step 02</Typography>
-                            <Typography>List problems you yourself are seeking solution to.</Typography>
+                            <Typography sx={{ fontSize: { xs: '0.95rem', sm: '1rem' }, lineHeight: { xs: '1.2', sm: '1.5' }}}>
+                                List problems you yourself are seeking solution to.
+                            </Typography>
                         </TimelineContent>
                     </TimelineItem>
 
@@ -99,9 +105,12 @@ const HowSection = () => {
                             <Typography
                                 variant="h6"
                                 sx={{
-                                    fontSize: { xs: '1.5rem', md: "2rem" },
+                                    fontSize: { xs: '1.3rem', sm: "2rem" },
+                                    fontWeight: 700,
                                 }}>Step 03</Typography>
-                            <Typography>Write feedback for apps by other students and collect credit points.</Typography>
+                            <Typography sx={{ fontSize: { xs: '0.95rem', sm: '1rem' }, lineHeight: { xs: '1.2', sm: '1.5' }}}>
+                                Write feedback for apps by other students and collect credit points.
+                            </Typography>
                         </TimelineContent>
                     </TimelineItem>
 
@@ -116,9 +125,12 @@ const HowSection = () => {
                             <Typography
                                 variant="h6"
                                 sx={{
-                                    fontSize: { xs: '1.5rem', md: "2rem" },
+                                    fontSize: { xs: '1.3rem', sm: "2rem" },
+                                    fontWeight: 700,
                                 }}>Step 04</Typography>
-                            <Typography>Use the credits to run survey for your own product, for free.</Typography>
+                            <Typography sx={{ fontSize: { xs: '0.95rem', sm: '1rem' }, lineHeight: { xs: '1.2', sm: '1.5' }}}>
+                                Use the credits to run survey for your own product, for free.
+                            </Typography>
                         </TimelineContent>
                     </TimelineItem>
                 </Timeline>
