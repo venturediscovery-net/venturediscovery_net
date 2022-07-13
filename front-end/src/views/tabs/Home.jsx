@@ -10,23 +10,24 @@ import { ThemeProvider } from '@mui/private-theming';
 import theme from '../../theme';
 
 const heading = {
-    title:"Have an Unsolved Problem / Unserved Need ?<br/> Be a part of the Solution!",
-    whomTitle: "For <span style={{color:\"SkyBlue\"}} > whom?</span>",
-    whyTitle: "Benefits:",
-    howTitle: "<span style={{color:\"RosyBrown\"}} >HOW</span> DOES IT WORK?",
+  title: "Have an Unsolved Problem / Unserved Need ?<br/> Be a part of the Solution!",
+  whomTitle: "For <span style={{color:\"SkyBlue\"}} > whom?</span>",
+  whyTitle: "Benefits:",
+  howTitle: "<span style={{color:\"RosyBrown\"}} >HOW</span> DOES IT WORK?",
 
 }
 const Home = () => {
   return (
-    <ThemeProvider theme ={theme}>
-        <Box sx = {{boxSizing:"border-box", backgroundColor: "#ffffff",paddingInline:{xs:"5%",md:"10%",}}}>
-            <VideoSection></VideoSection>
-            <WhomSection></WhomSection>
-            <WhySection></WhySection>
-            <HowSection></HowSection>
-            <CTASection></CTASection>
-            {/* <StatsSection></StatsSection> */}
-        </Box>
+    <ThemeProvider theme={theme}>
+      <Box>
+        <VideoSection></VideoSection>
+        <Box sx={{ boxSizing: "border-box", backgroundColor: "#F6F6F6", paddingInline: { xs: "5%", md: "10%", } }}>
+          <WhomSection></WhomSection>
+          <WhySection></WhySection>
+          <HowSection></HowSection>
+          <CTASection></CTASection>
+          {/* <StatsSection></StatsSection> */}
+        </Box></Box>
     </ThemeProvider>
   )
 }
