@@ -188,6 +188,7 @@ const Survey = () => {
 				<TitleDescriptionCard 
 					title = {surpriseTitle}
 					description = {surpriseDecscription}
+					bgColor = "linear-gradient(262.34deg, #828BB9 -26.28%, #AFE9FF 38.19%, #9CA8E7 119.38%)"
 				/>
 				<MultipleChoiceQCard
 					id={surpriseQuestion.ID}

@@ -34,9 +34,9 @@ let theme = createTheme({
 				},
 				subtitle1: {
 					lineHeight: 1.3,
-					fontSize: '0.8rem',
+					fontSize: '1.2rem',
 					'@media (min-width:600px)': {
-						fontSize: '1rem',
+						fontSize: '1.5rem',
 					},
 				},
 			},
@@ -90,7 +90,7 @@ const ShortAnswerTextQCard = (props) => {
 			        }}
                     onClick={() => questionSelected(qID)}
                 >
-                    <Box sx={{ mt: 0.5 }}>
+                    <Box>
                         <Typography variant='subtitle1' color="#101828">Q{qID}</Typography>
                     </Box>
                     <Box sx={{ ml: {xs: 1.5, sm: 2}, width: '100%' }}>    

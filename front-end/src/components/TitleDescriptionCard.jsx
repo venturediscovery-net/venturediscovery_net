@@ -43,12 +43,16 @@ const theme = createTheme({
 });
 
 const TitleDescriptionCard = (props) => {
+	let bgColor = props.bgColor ? props.bgColor : "#FFF"; 
+	console.log(bgColor);
+	
 	return (
 		<ThemeProvider theme={theme}>
 			<Card sx={{ 
 				minWidth: 275,
 				height: 'fit-content', 
 				width: 'fit-content',
+				background: bgColor
 			}}>
 				<CardContent sx={{ display: 'flex', flexDirection: 'column'}}>
 					<Typography variant='h5' sx={{ fontWeight: '600' }} color="#484848" gutterBottom>

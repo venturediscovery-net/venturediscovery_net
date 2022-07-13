@@ -9,10 +9,10 @@ input[type="radio"] {
 
 input[type="radio"]:hover ~ .MuiBox-root {
     border: 0.15rem solid #475467;
-    background: #F3F3F3;
+    background: #DAFBFF;
 }
 
 input[type="radio"]:checked ~ .MuiBox-root {
     border: 0.15rem solid #475467;
-    background: #F3F3F3;
+    background: #DAFBFF;
 }
