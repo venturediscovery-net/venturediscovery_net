@@ -3,7 +3,7 @@ import { Box } from '@mui/system';
 import React from 'react';
 import thumbnail from '../../assets/images/thumbnail.svg';
 import getString from '../../assets/data/getString';
-
+import _signUpBlack from '../buttons/signUpBlack';
 
 const VideoSection = () => {
 
@@ -11,16 +11,16 @@ const VideoSection = () => {
 		<Box sx={{
 			color: "#383838",
 			display: { xs: "flex" },
-			paddingBlock: { xs: "3vh", md: "20vh" },
+			paddingBlock: { xs: "3vh", md: "5vh" },
 			flexDirection: { xs: "column", md: "row" },
 			justifyContent: "space-between",
 			alignItems: { xs: "center", md: "left" },
 			zIndex: "-10",
-			background: "White",
+			background: "#ECF5F7",
 			height: "90%"
 		}} >
 
-			<Box sx={{ flexGrow: 1, textAlign: { xs: "center", md: "left" }, justifyContent: "center", }}>
+			<Box sx={{ marginLeft: "10vw", flexGrow: 1, textAlign: { xs: "center", md: "left" }, justifyContent: "center", }}>
 				<Typography
 					variant="h2"
 					component="h1"
@@ -29,22 +29,26 @@ const VideoSection = () => {
 						fontWeight: "400",
 					}}
 				>
-					Have an Unsolved Problem / Unserved Need?
+					Have an unsolved problem / unserved need?
 				</Typography>
+
+
+				<_signUpBlack ></_signUpBlack><br />
+				<Typography variant='p'>Register to know more about us!</Typography>
+			</Box>
+
+			<Box sx={{ flexGrow: 2, paddingInline: "2rem", width: "80%" }} >
 
 				<Typography variant='h3'
 					mt={3}
 					mb={5}
 					sx={{
+						textAlign: "center",
 						fontSize: { xs: '1.5rem', md: "3vw", xl: "3.5rem" },
 						fontWeight: "500",
 					}} >
 					Be a part of the <b>Solution!</b>
 				</Typography>
-			</Box>
-
-			<Box sx={{ flexGrow: 2, paddingInline: "2rem", width: "80%" }} >
-
 				{/* <video poster={thumbnail} controls sx={{ maxWidth: "100%", height:"auto"}}  src=""> <source src="" type="video/mp4"/></video> */}
 				{/* <iframe  poster={thumbnail} width="560" height="315" src="https://www.youtube.com/embed/e8RCnG2ibJk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
 				<CardMedia
@@ -57,7 +61,7 @@ const VideoSection = () => {
 					// src="https://www.youtube.com/embed/e8RCnG2ibJk"
 					poster={thumbnail}
 					alt="User" />
-				<Typography variant='p'><i>"(watch the video above see what some of the college students thinks!)"</i></Typography>
+				<Typography variant='p'><i>"(watch the video above to see what some of the college students think!)"</i></Typography>
 
 			</Box>
 		</Box>
