@@ -29,12 +29,13 @@ const VideoSection = () => {
 						fontWeight: "400",
 					}}
 				>
-					Have an unsolved problem / unserved need?
+					Are you a tech student? <br /> Not being able to test your application model?
 				</Typography>
 
-
-				<_signUpBlack ></_signUpBlack><br />
-				<Typography variant='p'>Register to know more about us!</Typography>
+				<Box sx={{ display: { xs: "none", md: "block" }, }} >
+					<_signUpBlack></_signUpBlack><br />
+					<Typography variant='p'>Register to know more about us!</Typography>
+				</Box>
 			</Box>
 
 			<Box sx={{ flexGrow: 2, paddingInline: "2rem", width: "80%" }} >
@@ -61,7 +62,7 @@ const VideoSection = () => {
 					// src="https://www.youtube.com/embed/e8RCnG2ibJk"
 					poster={thumbnail}
 					alt="User" />
-				<Typography variant='p'><i>"(watch the video above to see what some of the college students think!)"</i></Typography>
+				<Typography variant='p'><i>"(Watch the video above to see what college students think!!)"</i></Typography>
 
 			</Box>
 		</Box>

@@ -21,7 +21,7 @@ const Home = () => {
     <ThemeProvider theme={theme}>
       <Box>
         <VideoSection></VideoSection>
-        <Box sx={{ boxSizing: "border-box", backgroundColor: "#F6F6F6", paddingInline: { xs: "5%", md: "10%", } }}>
+        <Box sx={{ boxSizing: "border-box", backgroundColor: "#F6F6F6", paddingInline: { xs: "5%", md: "10%", }, paddingBottom: { xs: "2%", md: "5%", } }}>
           <WhomSection></WhomSection>
           <WhySection></WhySection>
           <HowSection></HowSection>

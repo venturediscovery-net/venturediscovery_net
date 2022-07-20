@@ -5,10 +5,10 @@ import CheckIcon from '@mui/icons-material/Check';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const why_list = [
-	"Test your classroom / theory learnings with real world Beta Users",
-	"Add credibility to your development / coding capability. Could help meaningfully in placements.",
-	"Collect feedback for your startup idea / venture - could help in raising funding",
-	"Make a big difference in the development career / startup journey of a fellow student/entrepreneur",
+	"Test your classroom learnings & model with real world beta users.",
+	"Add credibility to your development & coding capabilities could help meaningfully in job placement.",
+	"Collect feedback on your startup idea could also help in fund raising!",
+	"Not a coder? Lend a helping hand to a friend & community could help in job or startup venture by joining our Beta user community!",
 ]
 
 let theme = createTheme({
@@ -36,7 +36,7 @@ const WhySection = () => {
 
 	const listItems = why_list.map((item, index) =>
 		<ListItem key={index}>
-			<ListItemIcon sx={{ minWidth: 'auto', mr: {xs: 1.5, md: 2.5} }}>
+			<ListItemIcon sx={{ minWidth: 'auto', mr: { xs: 1.5, md: 2.5 } }}>
 				<CheckIcon
 					sx={{
 						'@media (min-width:900px)': {
@@ -47,7 +47,7 @@ const WhySection = () => {
 						strokeWidth: 1
 					}} />
 			</ListItemIcon>
-			<ThemeProvider theme={theme}>	
+			<ThemeProvider theme={theme}>
 				<ListItemText primary={item} sx={{ fontSize: "2rem" }} />
 			</ThemeProvider>
 		</ListItem>
@@ -56,9 +56,9 @@ const WhySection = () => {
 	return (
 		<Paper elevation={3}
 			sx={{
-                marginInline: { md: "3rem", xs: "2vw" },
-                marginBlock: { md: "3rem", xs: "1rem" },
-                padding: { md: "2.5rem", xs: "1rem", },
+				marginInline: { md: "3rem", xs: "2vw" },
+				marginBlock: { md: "3rem", xs: "1rem" },
+				padding: { md: "2.5rem", xs: "1rem", },
 			}}>
 			<Box sx={{ display: 'flex', alignItems: "center" }} >
 				<Typography
@@ -67,8 +67,9 @@ const WhySection = () => {
 						fontSize: { xs: '1.5rem', md: "3.5rem" },
 						padding: { md: "1rem", xs: "1rem", },
 						fontWeight: "400",
+						color: "LightSkyBlue",
 					}}>
-					Benefits:
+					<b>Benefits:</b>
 				</Typography>
 			</Box>
 			<List sx={{ listStyleImage: Link }}>

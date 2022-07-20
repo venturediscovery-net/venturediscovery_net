@@ -2,7 +2,6 @@ import React, { createContext, useState, useEffect, useContext } from "react"
 
 
 export const postContactConsentForm = async (finalValues, setMessage, setOpen, setSeverity) => {
-    console.log(finalValues);
     const res = await fetch('http://localhost:8000/storeContactConsent', {
         method: 'POST',
         body: JSON.stringify(finalValues),
@@ -14,5 +13,5 @@ export const postContactConsentForm = async (finalValues, setMessage, setOpen, s
     setMessage(response.msg)
     setOpen(true);
     setSeverity(response.severity)
-    return console.log(response);
+    return response;
 };

@@ -137,8 +137,9 @@ export default function ContactConsent() {
         event.preventDefault();
         if (formIsValid(values)) {
             const res = await postContactConsentForm(values, setMessage, setOpen, setSeverity);
+
             if (res) {
-                alert("You've posted your form!")
+                setTimeout(() => { navigateTo("/home"); }, 3000);
             }
         }
         else {

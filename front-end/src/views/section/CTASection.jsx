@@ -24,7 +24,7 @@ const CTASection = () => {
                     lineHeight: "1.2em",
                     margin: "1rem"
                 }}>
-                We’re in process of creating a community
+                What is our aim, you might ask?
             </Typography>
             <Typography
                 variant='body1'
@@ -43,10 +43,7 @@ const CTASection = () => {
                 }}>
                 {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nibh duis id ipsum non phasellus cum volutpat, dapibus. Purus nulla odio venenatis egestas velit tempor. Ac.
                  */}
-                We're building a platform for the startups to provide them with feedback from the beta users! 
-                All you've to do is build your persona, create a survey to get feedback for your product (web / app) 
-                from the beta user community on our platform. You can use the analytics which we provide to make 
-                better decisions for the growth of your product. 
+                Well, to break it down for you. We are building a Beta User community that would provide a platform for entrepreneurs & wanapreneurs to advertise and test their startup with Beta Users and gain useful insight on how their application might perform in a real-time environment. You could collect this feedback via running various Beta User surveys on the startup , which on proper analysis would help you, a budding entrepreneur, to improvise on your model and be successful or fail fast and try something else that could possibly make you successful!
 
             </Typography>
             <Typography
@@ -58,7 +55,8 @@ const CTASection = () => {
                     fontFamily: 'Inter',
                     lineHeight: "2.75rem"
                 }}>
-                Be the 1st to know Beta User Community launch. Register today!
+                Be the 1st to know about Beta User community launch.
+                Register today!
             </Typography>
             <_signUpBlack ></_signUpBlack>
         </Box>

@@ -5,19 +5,20 @@ const iconCardData = [
     {
         icon: user,
         iconbg: "LightSkyBlue",
-        title:"Coder",
+        title: "Coder",
         desc: "You have built a web /mobile app but have not been able to test with real users.",
+
     },
     {
-        icon:user,
+        icon: user,
         iconbg: "RosyBrown",
-        title:"User",
+        title: "User",
         desc: "You are not a coder but simply a user with unserved needs.",
     },
     {
-        icon:user,
+        icon: user,
         iconbg: "MediumPurple",
-        title:"Both",
+        title: "Both",
         desc: "You are either and want to help the startup ecosystem.",
     },
 ];
