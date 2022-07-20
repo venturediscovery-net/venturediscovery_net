@@ -13,9 +13,8 @@ import { useNavigate } from 'react-router-dom';
 
 var surveyTitle = "Is user feedback on your web/app dev actionable?";
 var surveyDescription = [
-	"We are curious to know how do you/your friends test the practical application, of theory lectures received in the college/institute regarding any new software development (web/app dev). (It's a 2 min survey)",
-	"Also, at the end of the survey, there's a surprise for you :)",
-	"This survey is being conducted by Venture Discovery which is building a platform to strengthen the startup eco-system in India. Please note, your filling this form would be considered as your consent to use the data for Venture Discovery's analysis. At the end of the survey, we would be happy to share some of the anonymized survey learnings/analytics which could help you in building and testing your software dev projects more efficiently."
+	"We are curious to know how you as students implement classroom learning in real life applications, hence we have come up with this survey. Also, at the end of the survey, there's a surprise for you :)",
+	"We at venture discovery aim at providing a platform to budding entrepreneurs and help the startup ecosystem in India. By filling this form, you consent to venture discovery using this data for analysis purposes."
 ]
 
 var surpriseTitle = "Its time for the surprise!";

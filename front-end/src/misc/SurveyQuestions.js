@@ -16,7 +16,7 @@ export const SurveyQuestions = [
     {
         "ID": 3,
         "Type": "MCQ",
-        "QText": "Have you developed any product before or developing now?",
+        "QText": "Have you tested any project that you’ve made or are working on?",
         "QOptions": [
             "Yes. Developed in the past",
             "Yes. Developing now",
@@ -50,7 +50,7 @@ export const SurveyQuestions = [
     {
         "ID": 6,
         "Type": "MCQ",
-        "QText": "Are the feedbacks relevant / actionable in improving your product?",
+        "QText": "Has any of the feedback had any positive impact on the improvement of your project?",
         "QOptions": [
             "Always",
             "Most of the times",
@@ -84,13 +84,4 @@ export const SurveyQuestions = [
         "Type": "SA",
         "QText": "Relating to your web/app dev - share any one problem statement you would want the Venture Discovery platform to help you with? (Max. 2 sentences)"
     },
-    // {
-        // "Type": "MCQ",
-        // "QText": "Are you up for the session?",
-        // "QOptions": [
-        //     "Yes",
-        //     "No",
-        //     "Later"
-        // ]
-    // }
 ]
