@@ -29,7 +29,7 @@ const VideoSection = () => {
 						fontWeight: "400",
 					}}
 				>
-					Are you a tech student? <br /> Not being able to test your application model?
+					Are you a tech student? <br /> Not being able to test your app / web project?
 				</Typography>
 
 				<Box sx={{ display: { xs: "none", md: "block" }, }} >
