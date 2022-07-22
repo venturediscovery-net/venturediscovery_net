@@ -43,7 +43,7 @@ const CTASection = () => {
                 }}>
                 {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nibh duis id ipsum non phasellus cum volutpat, dapibus. Purus nulla odio venenatis egestas velit tempor. Ac.
                  */}
-                Well, to break it down for you. We are building a Beta User community that would provide a platform for entrepreneurs & wanapreneurs to advertise and test their startup with Beta Users and gain useful insight on how their application might perform in a real-time environment. You could collect this feedback via running various Beta User surveys on the startup , which on proper analysis would help you, a budding entrepreneur, to improvise on your model and be successful or fail fast and try something else that could possibly make you successful!
+                Well, to break it down for you. We are building a Beta User community that would provide a platform for entrepreneurs & wanapreneurs to advertise and test their startup with Beta Users and gain useful insight on how their application might perform in a real-time environment. You could collect this feedback via running various Beta User surveys on the startup , which on proper analysis would help you, a budding entrepreneur, to improvise on your project and be successful or fail fast and try something else that could possibly make you successful!
 
             </Typography>
             <Typography

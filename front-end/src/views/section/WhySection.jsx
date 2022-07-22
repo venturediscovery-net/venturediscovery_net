@@ -69,7 +69,7 @@ const WhySection = () => {
 						fontWeight: "400",
 						color: "LightSkyBlue",
 					}}>
-					<b>Benefits:</b>
+					<b>Why?</b>
 				</Typography>
 			</Box>
 			<List sx={{ listStyleImage: Link }}>
