@@ -125,6 +125,8 @@ export default function ContactConsent() {
         setOpen,
         setSeverity,
         setMessage,
+        setFillSurvey,
+        message
     } = useContext(SnackbarContext);
 
     const navigate = useNavigate();
@@ -139,11 +141,16 @@ export default function ContactConsent() {
             const res = await postContactConsentForm(values, setMessage, setOpen, setSeverity);
 
             if (res) {
-                setTimeout(() => { navigateTo("/home"); }, 3000);
+                if ((values.userType === "Tech student / professional" || values.userType === "Both") || (values.userTypeSelected === "Developer testing my product with Beta users" || values.userTypeSelected === "Both") && message !== "User already exists, the details are updated!") {
+                    setFillSurvey(true);
+                } else {
+                    setFillSurvey(false);
+                }
             }
         }
         else {
-            console.log(values);
+            setFillSurvey(false);
+            // console.log(values);
             setOpen(true);
             setMessage("Fill all the details!");
             setSeverity("warning");
