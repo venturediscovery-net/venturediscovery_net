@@ -24,15 +24,7 @@ import Stack from '@mui/material/Stack';
 
 
 
-<<<<<<< HEAD
-const tabs = [['Home', "/home"],
-['Survey', '/survey'],
-// ['Community', "/commumity"],
-['FAQ', "/faq"]];
-
-=======
 const tabs = [['Home', "/home"], ['FAQ', "/faq"]];
->>>>>>> 4ccfe6787714165f20ec4ac0250a5e45b6fb2bc1
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const HeaderNav = () => {
@@ -103,7 +95,7 @@ const HeaderNav = () => {
 											<Typography textAlign="center">{tab[0]}</Typography>
 										</MenuItem>
 									))}
-									
+
 								</Menu>
 							</Box>
 
@@ -135,13 +127,17 @@ const HeaderNav = () => {
 						/> */}
 								<CardMedia
 									component="img"
-									sx={{ ml: 1, width: 290 }}
+									onClick={() => navigateTo("/home")}
+									sx={{
+										'&:hover': {
+											cursor: 'pointer'
+										}, ml: 1, width: 290
+									}}
 									image={navLogo}
 									alt="Logo"
 								/>
 							</Toolbar >
 
-							<Typography color="black">Supporting you from IDEA to IPO</Typography>
 							{/* TAB LINKS */}
 							<Box sx={{ mr: 5, justifyContent: "flex-end", flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 								{tabs.map((tab) => (
@@ -186,9 +182,14 @@ const HeaderNav = () => {
 								</Menu>
 							</Box>
 
-							{/* <Stack sx = {{display: { xs: 'flex' } }} spacing={2} direction="row" onClick={() => navigateTo("/register")}>
-							<Button variant="contained">Sign Up</Button>
-						</Stack> */}
+							<Stack sx={{
+								display: { xs: 'flex' }
+							}} spacing={2} direction="row" onClick={() => navigateTo("/contactConsent")}>
+								<Button style={{
+									borderRadius: 35,
+									backgroundColor: "black",
+								}} variant="contained">Register</Button>
+							</Stack>
 
 						</Toolbar>
 					</Container>
