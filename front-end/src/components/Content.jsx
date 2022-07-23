@@ -9,7 +9,7 @@ const Content = () => {
 		<Box sx={{ display: 'flex', flexDirection: 'column', mt: '70px' }}>
 			<Suspense>
 				<Routes>
-				{console.log(routes)};
+				{/* {console.log(routes)}; */}
 				{routes.map((route, idx) => {
 					return (
 					route.element && (

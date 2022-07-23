@@ -9,7 +9,7 @@ const Faq = React.lazy(() => import('./views/tabs/Faq'));
 const routes = [
   { path: '/Home',exact: true, name: 'Home', element:Home },
   { path: '/Survey', name: 'Survey', element: Survey },
-  { path: '/BetaCommunity', name: 'BetaCommunity', element: BetaCommunity },
+  // { path: '/BetaCommunity', name: 'BetaCommunity', element: BetaCommunity },
   { path: '/Faq', name: 'Faq', element: Faq },
 ];
 

@@ -1,21 +1,16 @@
-import React, { createContext, useState } from "react"
+import React, { createContext, useState } from "react";
+
 
 export const SnackbarContext = createContext()
 
 export function SnackbarProvider(props) {
-
+    
     // Snackbar State
-    const [open, setOpen] = useState(false)
-    const [severity, setSeverity] = useState("info")
-    const [message, setMessage] = useState("")
-
-    const handleClose = (event, reason) => {
-        if (reason === "clickaway") {
-            return
-        }
-        setOpen(false)
-    }
-
+    const [open, setOpen] = useState(false);
+    const [severity, setSeverity] = useState("info");
+    const [message, setMessage] = useState("");
+    const [fillSurvey, setFillSurvey] = useState(false);
+    
     return (
         <SnackbarContext.Provider
             value={{
@@ -25,7 +20,8 @@ export function SnackbarProvider(props) {
                 setSeverity,
                 message,
                 setMessage,
-                handleClose
+                fillSurvey, 
+                setFillSurvey
             }}
         >
             {props.children}

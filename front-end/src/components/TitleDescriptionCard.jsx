@@ -43,8 +43,7 @@ const theme = createTheme({
 });
 
 const TitleDescriptionCard = (props) => {
-	let bgColor = props.bgColor ? props.bgColor : "#FFF"; 
-	console.log(bgColor);
+	let bgColor = props.bgColor ? props.bgColor : "#FFF";
 	
 	return (
 		<ThemeProvider theme={theme}>

@@ -24,11 +24,15 @@ import Stack from '@mui/material/Stack';
 
 
 
+<<<<<<< HEAD
 const tabs = [['Home', "/home"],
 ['Survey', '/survey'],
 // ['Community', "/commumity"],
 ['FAQ', "/faq"]];
 
+=======
+const tabs = [['Home', "/home"], ['FAQ', "/faq"]];
+>>>>>>> 4ccfe6787714165f20ec4ac0250a5e45b6fb2bc1
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const HeaderNav = () => {
@@ -99,6 +103,7 @@ const HeaderNav = () => {
 											<Typography textAlign="center">{tab[0]}</Typography>
 										</MenuItem>
 									))}
+									
 								</Menu>
 							</Box>
 

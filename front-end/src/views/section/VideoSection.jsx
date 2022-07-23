@@ -34,7 +34,7 @@ const VideoSection = () => {
 				</Typography>
 
 				<Box sx={{ display: { xs: "none", md: "block" }, }} >
-					<_signUpBlack></_signUpBlack><br />
+					<_signUpBlack margin="2rem"></_signUpBlack><br />
 					<Typography variant='p'>Register to know more about us!</Typography>
 				</Box>
 			</Box>
