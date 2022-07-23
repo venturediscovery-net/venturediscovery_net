@@ -24,7 +24,11 @@ import Stack from '@mui/material/Stack';
 
 
 
-const tabs = [['Home', "/home"], ['Survey', '/survey'], ['Community', "/commumity"], ['FAQ', "/faq"]];
+const tabs = [['Home', "/home"],
+['Survey', '/survey'],
+// ['Community', "/commumity"],
+['FAQ', "/faq"]];
+
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const HeaderNav = () => {
@@ -132,6 +136,7 @@ const HeaderNav = () => {
 								/>
 							</Toolbar >
 
+							<Typography color="black">Supporting you from IDEA to IPO</Typography>
 							{/* TAB LINKS */}
 							<Box sx={{ mr: 5, justifyContent: "flex-end", flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 								{tabs.map((tab) => (

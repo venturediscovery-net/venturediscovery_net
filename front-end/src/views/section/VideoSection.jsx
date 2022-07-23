@@ -21,6 +21,7 @@ const VideoSection = () => {
 		}} >
 
 			<Box sx={{ marginLeft: "10vw", flexGrow: 1, textAlign: { xs: "center", md: "left" }, justifyContent: "center", }}>
+
 				<Typography
 					variant="h2"
 					component="h1"
